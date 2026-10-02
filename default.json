@@ -33,9 +33,10 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
-      "before 6am on the first day of the month"
+      "before 6am on monday"
     ],
-    "automerge": true
+    "automerge": true,
+    "description": "Weekly lockfile refresh: re-resolves every transitive dependency to the newest version its range allows, which is what `npm audit fix` does by hand. Renovate does not otherwise touch transitive deps, so this is the sweep that clears Dependabot alerts. Auto-merges on a green Netlify preview."
   },
   "packageRules": [
     {
